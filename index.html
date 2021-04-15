@@ -7,12 +7,18 @@
   <title>Document</title>
 <style>
   .invalid{
-    border-color: red;
+    border: 3px solid red;
+  }
+  form{
+    border: 3px solid black;
+    margin: 20px auto;
+    padding: 20px;
+    width: 70%;
   }
 </style>
 </head>
 <body>
-  <form id="frm" action="">
+  <form onsubmit="return submission()" id="frm" action="">
     <label for="">Educational Qualification</label>
     <select name="educational qualifications" id="EDU">
       <option value="M.Sc">M.Sc</option>
@@ -25,11 +31,11 @@
     </select>
     <br><br>
     <label for="">Phone Number</label>
-    <input id="PhoneNumber" type="text" name = "PhoneNumber">
+    <input id="PhoneNumber" type="text" name = "PhoneNumber" oninput="phone()">
     <label id="validate-phone" for=""></label>
     <br><br>
     <label for="">Age</label>
-    <input id="Age" type="text" name= "Age">
+    <input id="Age" type="text" name= "Age" oninput="age()">
     <label id="validate-age" for=""></label>
     <br><br>
     <label for="">Gender</label>
@@ -39,26 +45,26 @@
     </select>
     <br><br>
     <label for="">Email</label>
-    <input id="Email" type="text" name="Email" id="">
+    <input id="Email" type="text" name="Email" oninput="email()">
     <label id="validate-email" for=""></label>
     <br><br>
     <label for="">Password</label>
-    <input id="Password" type="password" name ="Password">
+    <input id="Password" type="password" name ="Password" oninput="password()">
     <label id="validate-password" for=""></label>
     <br><br>
     <label for="">Confirm Password</label>
-    <input id="ConfirmPassword" type="password" name = "ConfirmPassword">
+    <input id="ConfirmPassword" type="password" name = "ConfirmPassword" oninput="confirm()">
     <label id="validate-confirmpassword" for=""></label>
     <br><br>
     <label for="">Name</label>
-    <input id="Name" type="text" name= "Name">
+    <input id="Name" type="text" name= "Name" oninput="nome()">
     <label id="validate-naam" for=""></label>
     <br><br>
     <label for="">City</label>
-    <input id="City" type="text" name="City">
+    <input id="City" type="text" name="City" oninput="city()">
     <label id="validate-city" for=""></label>
     <br><br>
-    <input onclick ="checkit()" type="button" value="submit">
+    <input type="submit" value="submit" id="btn">
   </form>
   <!-- <script src="validations.js"></script> -->
   <script src="validate.js"></script>
