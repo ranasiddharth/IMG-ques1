@@ -1,12 +1,12 @@
 const regex = {
 
-  Name: /[A-Za-z\s'.]{3,}/,
-  PhoneNumber: /^(\+91 |91|0|\+91|91 )?[6-9]{1}[0-9]{9}$/,
+  Name: /^([A-Za-z\s']+)$/i,
+  PhoneNumber: /^(\+91 |91|0|\+91|91 |\+91\-|91\-){1}[6-9]{1}[0-9]{9}$/,
   Age: /^[0-9][0-9]{0,2}$/,
-  Email: /^([\w\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8}){0,1}$/,
-  // City: /[A-Za-z]([a-z/s]+)/,
-  City: /^[a-zA-Z]{3,}$/ ,
-  Password: /^(?=.[!@#$%^&])(?=.[0-9])[a-zA-Z0-9!@#$%^&]{8,16}$/
+  Email: /^([\w\.\-]+)@([a-z\d\-]+)\.([a-z]{2,8})(\.[a-z]{2,8}){0,1}(\.[a-z]{2,8}){0,1}$/,
+  City: /^([0-9]{0,1}|[0-9]{0,1} )([A-Za-z']{1,16}){1}(\s[A-za-z']{1,16}){0,2}$/,
+  // City: /^[a-zA-Z]{3,}$/ ,
+  Password: /^(?=.*[@#$%^&=])[\w@_-]{8,15}$/
   // ConfirmPassword: /^[\w@_-]{8,14}$/
 
 }
@@ -99,7 +99,7 @@ function age(){
 let var2 = w2.value.trim();
   if (!var2.match(regex.Age) || w2.length == 0) {
     // alert("Invalid age, Pls specify between 001-150 in 3 digits");
-    func("Invalid age, Pls specify between 001-150 in 3 digits", "validate-age");
+    func("Invalid age, please correct it", "validate-age");
     w2.classList.add("invalid");
     // return false;
     
@@ -181,7 +181,7 @@ let var2 = w2.value.trim();
   let var7 = w7.value.trim();
     if (!var7.match(regex.City) || w7.length == 0) {
       // alert("Invalid city, Pls write first letter capital");
-      func("Invalid city, Pls write first letter capital", "validate-city");
+      func("Invalid city, you may use a single digit at the start(if required) ", "validate-city");
       w7.classList.add("invalid");
       // return false;
       
